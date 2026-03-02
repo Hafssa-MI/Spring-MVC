@@ -25,4 +25,17 @@
 
 ---
 
+### Etape 2: Teste de la couche DAO
+* **Taches:**
+  - [x] Création de l'entité Product avec les Annotations et ProductRepository qui extend JPARepository avec les paramétres Product comme classe et Long comme type de l'id.
+  - [x] Tester par création d'une table Product et des produits dans h2 database.
+  - [x] Désactivation du Spring Security par défaut.
+* **Commit Hash:** `Création de l'entity product, l'interface ProductRepo et le test`
+<br>
+![img.png](img.png)
+
+
+---
+
+
 2026 - HAFSSA MIFTAH IDRISSI - ENSET/ MST-SDIA 1
