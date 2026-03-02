@@ -32,7 +32,7 @@
   - [x] Désactivation du Spring Security par défaut.
 * **Commit Hash:** `Création de l'entity product, l'interface ProductRepo et le test`
 <br>
-![img.png](img.png)
+<img width="939" height="492" alt="image" src="https://github.com/user-attachments/assets/c1baf5f2-dc61-4eb3-9fd1-808198ea1896" />
 
 
 ---
