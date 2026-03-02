@@ -1,5 +1,5 @@
-# 🍃 Spring MVC Project: Dependency Injection & Web Architecture
-> **Student:** HAFSSA  
+# Spring MVC Project: Dependency Injection & Web Architecture
+> **Student:** HAFSSA MIFTAH IDRISSI 
 > **Course:** Practical Activity - Java Frameworks  
 > **Repository:** [Spring-MVC](https://github.com/Hafssa-MI/Spring-MVC)
 
