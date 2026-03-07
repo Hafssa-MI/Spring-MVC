@@ -25,17 +25,25 @@
 
 ---
 
-### Etape 2: Teste de la couche DAO
+### Etape 2: Test de la couche DAO
 * **Taches:**
   - [x] Création de l'entité Product avec les Annotations et ProductRepository qui extend JPARepository avec les paramétres Product comme classe et Long comme type de l'id.
   - [x] Tester par création d'une table Product et des produits dans h2 database.
   - [x] Désactivation du Spring Security par défaut.
 * **Commit Hash:** `Création de l'entity product, l'interface ProductRepo et le test`
-<br>
-<img width="939" height="492" alt="image" src="https://github.com/user-attachments/assets/c1baf5f2-dc61-4eb3-9fd1-808198ea1896" />
-
 
 ---
+
+### Etape 3: Création du controlleur Spring MVC et les vues Thymeleaf
+* **Taches:**
+  - [x] Création de la classe Product Controller avec une entité de type @Controller, @Autowired pour les injection des dépendances, des méthodes avec @GetMapping ou @PostMapping qui gèrent les événements sur les vues et la base de données en ayant un accés au Model.
+  - [x] Création d'une template html basée sur Thymeleaf et bootstrap.
+  - [x] Création de la vue products qui affiche, supprime et ajoute des produits, la vue new-product pour l'ajout d'un produit et notAuthorized pour diriger les utilisateurs non authorizé à réaliser certaines taches vers une page bien structuré au lieu de la page par défaut des erreurs.
+  - [x] Activation de la sécurité avec Spring Security en créant une classe Security config dans le package sec qui gére l'accés à des services selon les roles et a 3 utilisateurs; 2 users et 1 admin et une méthode pour le password encoder.
+  - [x] Pour la définition de la structure de la sécurité, les users ne voient pas les boutons ajouter et delete alors que l'admin a l'accés à ses services.
+  - [x] Pour la gestion des comptes, apart l'authentification il existe un bouton logout.
+* **Commit Hash:** `Création du controlleur spring MVC et les vues Thymeleaf et la sécurité avec Spring Security`
+
 
 
 2026 - HAFSSA MIFTAH IDRISSI - ENSET/ MST-SDIA 1
