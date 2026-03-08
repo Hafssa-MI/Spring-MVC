@@ -53,4 +53,12 @@
 * **Commit Hash:** `Création de notre propre page d'authentification login.html`
 
 
+---
+
+### Etape 5: Utilisation du Spring Security avec les annotation
+* **Taches:**
+  - [x] Utilisation Spring Security avec les annotation et spécifiant pour chaque méthode dans le controlleur le role permis. 
+* **Commit Hash:** `Utilisation du Spring Security avec les annotation`
+
+
 2026 - HAFSSA MIFTAH IDRISSI - ENSET/ MST-SDIA 1

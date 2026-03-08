@@ -3,6 +3,8 @@ package net.hafssa.springmvc.sec;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -13,6 +15,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+// doesnt exist in Spring security 6 and 7
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean
@@ -46,8 +51,8 @@ public class SecurityConfig {
                 // protéger les ressources par des roles : ex = toutes les requetes avec le lien /index nécessite un role User
                 //.authorizeHttpRequests(ar->ar.requestMatchers("/index/**").hasRole("USER"))
                 //.authorizeHttpRequests(ar->ar.requestMatchers("/delete/**","/save**/**").hasRole("ADMIN"))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"))
+                //.authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"))
+                //.authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"))
                 .authorizeHttpRequests(ar->ar.requestMatchers("/public/**","/webjars/**").permitAll())
                 .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
                 .exceptionHandling(eh->eh.accessDeniedPage("/notAuthorized"))

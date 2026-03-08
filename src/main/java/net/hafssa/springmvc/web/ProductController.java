@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import net.hafssa.springmvc.entities.Product;
 import net.hafssa.springmvc.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +21,7 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
     @GetMapping("/user/index")
+    @PreAuthorize("hasRole('USER')")
     public String index(Model model){
         List<Product> products = productRepository.findAll();
         model.addAttribute("productList", products);
@@ -31,15 +33,18 @@ public class ProductController {
     }
     //@DeleteMapping("/admin/delete") we can use it if we have javascript code to handle it but in the form of html there is only post or get, but it is still secure ; the form ensures csrf tokens
     @PostMapping("/admin/delete")
+    @PreAuthorize("hasRole('ADMIN')")
     public String delete(@RequestParam(name="id") Long id){
         productRepository.deleteById(id);
         return "redirect:/user/index";
     }
     @GetMapping("/admin/newProduct")
+    @PreAuthorize("hasRole('ADMIN')")
     public String newProduct(Model model){
         model.addAttribute("product", new Product());
         return "new-product";
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/admin/saveProduct")
     //@Valid pour voir si les champs saisis dans le formulaire respecte les contrainte mises dans le mode sinon il stocke les erreurs dans le BindingResult object
     public String saveProduct(@Valid Product product, BindingResult bindingResult, Model model){
