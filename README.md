@@ -45,5 +45,12 @@
 * **Commit Hash:** `Création du controlleur spring MVC et les vues Thymeleaf et la sécurité avec Spring Security`
 
 
+---
+
+### Etape 4: Création de notre propre page d'authentification login.html
+* **Taches:**
+  - [x] Création de notre page d'authentification personnalisé au lieu du celle du spring par défaut, de qui necéssite qu'on gére le logout aussi dans le controlleur et qu'on ajoute le styling du bootstrap dans le header de l'html au lieu d'utiliser la template parcequ'elle necessite l'authentification.
+* **Commit Hash:** `Création de notre propre page d'authentification login.html`
+
 
 2026 - HAFSSA MIFTAH IDRISSI - ENSET/ MST-SDIA 1

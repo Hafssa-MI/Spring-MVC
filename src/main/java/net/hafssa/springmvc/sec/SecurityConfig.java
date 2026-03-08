@@ -35,9 +35,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 //Spécifier une forme de login pour les utilisateurs non authentifié
-                .formLogin(Customizer.withDefaults())
+                //.formLogin(Customizer.withDefaults())
                 //Spécifier une form de login qu'on a crée
-                //.formLogin(fl->fl.loginPage("/login"))
+                .csrf(Customizer.withDefaults())
+                .formLogin(fl->fl.loginPage("/login").permitAll())
 
                 // ca veut dire toutes les ressources nécessitent une authentification
                 //.authorizeHttpRequests(ar->ar.anyRequest().authenticated())
@@ -47,7 +48,7 @@ public class SecurityConfig {
                 //.authorizeHttpRequests(ar->ar.requestMatchers("/delete/**","/save**/**").hasRole("ADMIN"))
                 .authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"))
                 .authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/public/**").permitAll())
+                .authorizeHttpRequests(ar->ar.requestMatchers("/public/**","/webjars/**").permitAll())
                 .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
                 .exceptionHandling(eh->eh.accessDeniedPage("/notAuthorized"))
                 .build();
