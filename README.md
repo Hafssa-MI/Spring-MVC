@@ -61,4 +61,15 @@
 * **Commit Hash:** `Utilisation du Spring Security avec les annotation`
 
 
+---
+
+### Etape 6: Reprendre les exemples  du Patient, Médecin, rendez-vous, consultation
+* **Taches:**
+  - [x] Création des entités.
+  - [x] Création des Repository (DAO).
+  - [x] Création de l'interface service hospital et son implémentation dans lequel on appel les méthodes (Metie).
+  - [x] Appel et run dans le CommandLineRunner method start.
+* **Commit Hash:** `Reprendre les exemples  du Patient, Médecin, rendez-vous, consultation`
+
+
 2026 - HAFSSA MIFTAH IDRISSI - ENSET/ MST-SDIA 1
