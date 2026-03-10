@@ -5,6 +5,8 @@ import net.hafssa.springmvc.entities.Medecin;
 import net.hafssa.springmvc.entities.Patient;
 import net.hafssa.springmvc.entities.RendezVous;
 
+import java.util.List;
+
 public interface IHospitalService {
     Patient savePatient(Patient patient);
     Medecin saveMedecin(Medecin medecin);
@@ -14,4 +16,6 @@ public interface IHospitalService {
     Medecin findMedecinById(Long id);
     Medecin findMedecinByNom(String nom);
     Patient findPatientByNom(String nom);
+    List<Patient> getAllPatients();
+    List<Medecin> getAllMedecins();
 }

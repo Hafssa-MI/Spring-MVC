@@ -72,4 +72,14 @@
 * **Commit Hash:** `Reprendre les exemples  du Patient, Médecin, rendez-vous, consultation`
 
 
+---
+
+### Etape 6: Ajouter des PatientController et Medecin Controller pour ajouter des vues
+* **Taches:**
+  - [x] Création des Controller et ajout des Mapping et les roles pour chaque service.
+  - [x] Ajout des patients et medecins dans le layout.
+  - [x] Création des vues.
+* **Commit Hash:** `Ajouter des PatientController et Medecin Controller pour ajouter des vues`
+
+
 2026 - HAFSSA MIFTAH IDRISSI - ENSET/ MST-SDIA 1

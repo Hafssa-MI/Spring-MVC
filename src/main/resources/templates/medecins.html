@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="layout1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Médecins</title>
+</head>
+<body>
+<div class="p-3" layout:fragment="content">
+    <div class="p-3" sec:authorize="hasRole('ADMIN')">
+        <a class="btn btn-primary" th:href="@{/admin/newMedecin}">New Médecin</a>
+    </div>
+    <table class="table">
+        <thead>
+        <th>ID</th><th>Nom</th><th>Email</th><th>Spécialité</th>
+        </thead>
+        <tbody>
+        <tr th:each="m : ${medecinList}">
+            <td th:text="${m.id}"></td>
+            <td th:text="${m.nom}"></td>
+            <td th:text="${m.email}"></td>
+            <td>
+                <span class="badge bg-info text-dark" th:text="${m.specialite}"></span>
+            </td>
+            <td sec:authorize="hasRole('ADMIN')">
+                <form method="post" th:action="@{/admin/deleteMedecin(id=${m.id})}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

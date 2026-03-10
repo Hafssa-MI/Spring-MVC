@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>New Patient</title>
+</head>
+<body>
+<div class="p-3" layout:fragment="content">
+    <h2 class="mb-4">New Patient</h2>
+    <form method="post" th:action="@{/admin/savePatient}" th:object="${patient}">
+        <div class="mb-3">
+            <label class="form-label">Nom</label>
+            <input type="text" class="form-control" th:field="*{nom}"
+                   th:classappend="${#fields.hasErrors('nom')} ? 'is-invalid'">
+            <div class="invalid-feedback" th:errors="*{nom}"></div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Date de Naissance</label>
+            <input type="date" class="form-control" th:field="*{dateNaissance}"
+                   th:classappend="${#fields.hasErrors('dateNaissance')} ? 'is-invalid'">
+            <div class="invalid-feedback" th:errors="*{dateNaissance}"></div>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" th:field="*{malade}">
+            <label class="form-check-label">Malade</label>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <a class="btn btn-secondary" th:href="@{/user/patients}">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

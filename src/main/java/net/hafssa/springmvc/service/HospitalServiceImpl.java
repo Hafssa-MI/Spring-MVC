@@ -11,6 +11,8 @@ import net.hafssa.springmvc.repository.PatientRepository;
 import net.hafssa.springmvc.repository.RendezVousRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 
@@ -68,4 +70,14 @@ public class HospitalServiceImpl implements IHospitalService {
     public Patient findPatientByNom(String nom) {
         return patientRepository.findByNom(nom);
     }
+    @Override
+    public List<Patient> getAllPatients() {
+        return patientRepository.findAll();
+    }
+
+    @Override
+    public List<Medecin> getAllMedecins() {
+        return medecinRepository.findAll();
+    }
+
 }

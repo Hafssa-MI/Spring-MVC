@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="layout1"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+</head>
+<body>
+<div class="p-3" layout:fragment="content">
+    <div class="p-3" sec:authorize="hasRole('ADMIN')">
+        <a class="btn btn-primary" th:href="@{/admin/newPatient}">New Patient</a>
+    </div>
+    <table class="table">
+        <thead>
+        <th>ID</th><th>Nom</th><th>Date Naissance</th><th>Statut</th>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${patientList}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.nom}"></td>
+            <td th:text="${p.dateNaissance}"></td>
+            <td>
+                <span th:if="${p.malade}" class="badge bg-danger">Malade</span>
+                <span th:unless="${p.malade}" class="badge bg-success">Sain</span>
+            </td>
+            <td sec:authorize="hasRole('ADMIN')">
+                <form method="post" th:action="@{/admin/deletePatient(id=${p.id})}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
